@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1309</width>
+    <height>636</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1309</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetNoConstraint</enum>
+   </property>
+   <property name="spacing">
+    <number>5</number>
+   </property>
+   <item row="0" column="1">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabAll">
+      <attribute name="title">
+       <string>Wszystkie</string>
+      </attribute>
+      <widget class="QTextEdit" name="textEdit">
+       <property name="geometry">
+        <rect>
+         <x>635</x>
+         <y>27</y>
+         <width>751</width>
+         <height>581</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>149</x>
+         <y>30</y>
+         <width>141</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_serialNumber">
+        <item>
+         <widget class="QLabel" name="label_serialNumber">
+          <property name="text">
+           <string>Numer seryjny</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_serialNumber"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>30</y>
+         <width>150</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_purchaseDate">
+          <property name="text">
+           <string>data zakupu</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDateEdit" name="dateEdit_purchaseDate"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>492</x>
+         <y>30</y>
+         <width>131</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_model">
+        <item>
+         <widget class="QLabel" name="label_model">
+          <property name="text">
+           <string>model</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_model"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>141</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_status">
+        <item>
+         <widget class="QLabel" name="label_status">
+          <property name="text">
+           <string>status</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_status"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>70</y>
+         <width>151</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_country">
+        <item>
+         <widget class="QLabel" name="label_country">
+          <property name="text">
+           <string>kraj</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_country"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>121</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_type">
+        <item>
+         <widget class="QLabel" name="label_type">
+          <property name="text">
+           <string>Typ</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_type"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>70</y>
+         <width>120</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_instytution">
+        <item>
+         <widget class="QLabel" name="label_institution">
+          <property name="text">
+           <string>instytucja</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_institution"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>490</x>
+         <y>70</y>
+         <width>131</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_room">
+        <item>
+         <widget class="QLabel" name="label_room">
+          <property name="text">
+           <string>pokój</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_room"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QTableView" name="tableView_all">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>130</y>
+         <width>621</width>
+         <height>451</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_search">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>100</y>
+         <width>221</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Wyszukaj</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tabSiPM">
+      <attribute name="title">
+       <string>SiPM</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tabAFE">
+      <attribute name="title">
+       <string>AFE</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Huby</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Scyntylatory</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tabDetektory">
+      <attribute name="title">
+       <string>Detektory</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tabSekcje">
+      <attribute name="title">
+       <string>Sekcje</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tabModuly">
+      <attribute name="title">
+       <string>Moduły</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
