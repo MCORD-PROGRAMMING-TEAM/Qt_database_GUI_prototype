@@ -18,11 +18,19 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
+    static const QString sipmFilteredQueryString;
+
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_search_clicked();
 
 private:
     Ui::Widget *ui;
     QSqlDatabase mcordDatabase;
+    QSqlQuery sipmQuery;
+    QSqlQueryModel *mcordModel;
 };
+
+
 #endif // WIDGET_H
