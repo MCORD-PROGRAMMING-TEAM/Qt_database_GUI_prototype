@@ -5,6 +5,7 @@
 #include <QtSql>
 #include <QDebug>
 #include <QFileInfo>
+#include <QStandardItemModel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -21,15 +22,18 @@ public:
     static const QString sipmFilteredQueryString;
 
 private slots:
-    void on_pushButton_clicked();
-
     void on_pushButton_search_clicked();
 
 private:
-    Ui::Widget *ui;
-    QSqlDatabase mcordDatabase;
-    QSqlQuery sipmQuery;
-    QSqlQueryModel *mcordModel;
+    Ui::Widget * ui;
+    QSqlDatabase * mcordDatabase;
+    QList<QSqlQuery *> * preparedQueries;
+//    QSqlQuery * sipmQuery;
+//    QSqlQueryModel *mcordModel;
+    QStandardItemModel * mcordModel;
+
+    void addDataToModel(QStandardItemModel *model, QList<QSqlQuery *> * queries);
+    QList<QSqlQuery *> * createQueries(QSqlDatabase * mcordDatabase);
 };
 
 
