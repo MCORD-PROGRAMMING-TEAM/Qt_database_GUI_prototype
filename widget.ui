@@ -10,12 +10,6 @@
     <height>636</height>
    </rect>
   </property>
-  <property name="maximumSize">
-   <size>
-    <width>1309</width>
-    <height>16777215</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>Widget</string>
   </property>
@@ -33,7 +27,7 @@
      </property>
      <widget class="QWidget" name="tabAll">
       <attribute name="title">
-       <string>Wszystkie</string>
+       <string>All</string>
       </attribute>
       <widget class="QTextEdit" name="textEdit">
        <property name="geometry">
@@ -50,15 +44,15 @@
         <rect>
          <x>149</x>
          <y>30</y>
-         <width>141</width>
-         <height>24</height>
+         <width>151</width>
+         <height>30</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_serialNumber">
         <item>
          <widget class="QLabel" name="label_serialNumber">
           <property name="text">
-           <string>Numer seryjny</string>
+           <string>Serial Number</string>
           </property>
          </widget>
         </item>
@@ -72,7 +66,7 @@
         <rect>
          <x>310</x>
          <y>30</y>
-         <width>150</width>
+         <width>171</width>
          <height>25</height>
         </rect>
        </property>
@@ -80,7 +74,7 @@
         <item>
          <widget class="QLabel" name="label_purchaseDate">
           <property name="text">
-           <string>data zakupu</string>
+           <string>Date of Purchase</string>
           </property>
          </widget>
         </item>
@@ -102,7 +96,7 @@
         <item>
          <widget class="QLabel" name="label_model">
           <property name="text">
-           <string>model</string>
+           <string>Model</string>
           </property>
          </widget>
         </item>
@@ -116,7 +110,7 @@
         <rect>
          <x>10</x>
          <y>70</y>
-         <width>141</width>
+         <width>121</width>
          <height>24</height>
         </rect>
        </property>
@@ -124,7 +118,7 @@
         <item>
          <widget class="QLabel" name="label_status">
           <property name="text">
-           <string>status</string>
+           <string>Status</string>
           </property>
          </widget>
         </item>
@@ -138,7 +132,7 @@
         <rect>
          <x>310</x>
          <y>70</y>
-         <width>151</width>
+         <width>171</width>
          <height>24</height>
         </rect>
        </property>
@@ -146,7 +140,7 @@
         <item>
          <widget class="QLabel" name="label_country">
           <property name="text">
-           <string>kraj</string>
+           <string>Country </string>
           </property>
          </widget>
         </item>
@@ -168,7 +162,7 @@
         <item>
          <widget class="QLabel" name="label_type">
           <property name="text">
-           <string>Typ</string>
+           <string>Type </string>
           </property>
          </widget>
         </item>
@@ -180,9 +174,9 @@
       <widget class="QWidget" name="layoutWidget_7">
        <property name="geometry">
         <rect>
-         <x>170</x>
+         <x>149</x>
          <y>70</y>
-         <width>120</width>
+         <width>151</width>
          <height>24</height>
         </rect>
        </property>
@@ -190,7 +184,7 @@
         <item>
          <widget class="QLabel" name="label_institution">
           <property name="text">
-           <string>instytucja</string>
+           <string>Institution</string>
           </property>
          </widget>
         </item>
@@ -212,7 +206,7 @@
         <item>
          <widget class="QLabel" name="label_room">
           <property name="text">
-           <string>pokój</string>
+           <string>Room No.</string>
           </property>
          </widget>
         </item>
@@ -234,50 +228,50 @@
       <widget class="QPushButton" name="pushButton_search">
        <property name="geometry">
         <rect>
-         <x>400</x>
+         <x>490</x>
          <y>100</y>
-         <width>221</width>
+         <width>131</width>
          <height>22</height>
         </rect>
        </property>
        <property name="text">
-        <string>Wyszukaj</string>
+        <string>Search</string>
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="tabSiPM">
+     <widget class="QWidget" name="tab_sipm">
       <attribute name="title">
        <string>SiPM</string>
       </attribute>
      </widget>
-     <widget class="QWidget" name="tabAFE">
+     <widget class="QWidget" name="tab_afe">
       <attribute name="title">
        <string>AFE</string>
       </attribute>
      </widget>
-     <widget class="QWidget" name="tab">
+     <widget class="QWidget" name="tab_hub">
       <attribute name="title">
-       <string>Huby</string>
+       <string>Hub</string>
       </attribute>
      </widget>
-     <widget class="QWidget" name="tab_2">
+     <widget class="QWidget" name="tab_scintillator">
       <attribute name="title">
-       <string>Scyntylatory</string>
+       <string>Scintillator</string>
       </attribute>
      </widget>
-     <widget class="QWidget" name="tabDetektory">
+     <widget class="QWidget" name="tab_detector">
       <attribute name="title">
-       <string>Detektory</string>
+       <string>Detector</string>
       </attribute>
      </widget>
-     <widget class="QWidget" name="tabSekcje">
+     <widget class="QWidget" name="tab_section">
       <attribute name="title">
-       <string>Sekcje</string>
+       <string>Section</string>
       </attribute>
      </widget>
-     <widget class="QWidget" name="tabModuly">
+     <widget class="QWidget" name="tab_module">
       <attribute name="title">
-       <string>Moduły</string>
+       <string>Module</string>
       </attribute>
      </widget>
     </widget>

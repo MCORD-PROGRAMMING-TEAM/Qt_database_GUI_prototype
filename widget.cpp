@@ -1,5 +1,6 @@
 #include "widget.h"
 #include "ui_widget.h"
+#include <QDateTime>
 
 const QString Widget::sipmFilteredQueryString =
         R"(SELECT d.serial_number AS serial_number,
@@ -14,6 +15,7 @@ FROM location l
 JOIN device d ON d.location_id = l.id
 JOIN sipm s ON d.id = s.id AND d.date_from = s.date_from
 WHERE (d.serial_number = coalesce(:serialNumber, d.serial_number) OR d.serial_number ISNULL))";
+//AND (d.purchase_date = coalesce(:purchaseDate, d.purchase_date) OR d.purchase_date ISNULL)
 
 //const QString Widget::sipmFilteredQueryString =
 //        R"(SELECT d.serial_number AS serial_number,
@@ -56,14 +58,25 @@ Widget::Widget(QWidget *parent)
     mcordModel = new QStandardItemModel(parent);
     //TODO Utworzyć w bazie danych tabelkę (chyba jedna wystarczy) w której będą trzymane takie dane jak lista dostępnych państw, instytucji, pokojów, możliwych stanów urządzeń, itp.,
     //tak, żeby można było je wczytać przy starcie aplikacji.
-    QStringList countries = {"Poland", "Russia"}; //Zapoznać się z Qt Linguist, tak, żeby w programie i bazie danych były angielskie nazwy, a inne języki były uwzględnione jedynie w dedykowanym do tego narzędziu.
+    QStringList countries = {"", "Poland", "Russia"}; //Zapoznać się z Qt Linguist, tak, żeby w programie i bazie danych były angielskie nazwy, a inne języki były uwzględnione jedynie w dedykowanym do tego narzędziu.
     ui->comboBox_country->addItems(countries);
 
-    QStringList institutions = {"NCBJ", "PW", "JINR"};
+    QStringList institutions = {"", "NCBJ", "PW", "JINR"};
     ui->comboBox_institution->addItems(institutions);
 
     QStringList rooms = {"", "40", "238"};
     ui->comboBox_room->addItems(rooms);
+
+//    QStringList statuses = {"nowe", "zamontowane w belce"};
+    ui->comboBox_status->addItem("", "");
+    ui->comboBox_status->addItem("new", "nowe");
+    ui->comboBox_status->addItem("mounted in the bar", "zamontowane w belce");
+
+    QStringList types = {"","SiPM", "AFE", "Hub", "scintillator"};
+    ui->comboBox_type->addItems(types);
+
+    QStringList models = {"","S13360-3075PE"};
+    ui->comboBox_model->addItems(models);
 
     preparedQueries = createQueries(mcordDatabase);
 }
@@ -127,12 +140,15 @@ void Widget::addDataToModel(QStandardItemModel * model, QList<QSqlQuery *> * que
     headers.append("Room");
 
     QString serialNumber = ui->lineEdit_serialNumber->text();
-    QVariant serialNumberOrNull = (serialNumber.isEmpty()? QVariant(QVariant::String): serialNumber);  //Proponowane zamiaste tej przestażałej wersji rozwiązania nie działają
+    QVariant serialNumberOrNull = serialNumber.isEmpty() ? QVariant(QVariant::String) : serialNumber;  //Proponowane zamiaste tej przestażałej wersji rozwiązania nie działają
 
-    //    sipmQuery->bindValue(":serialNumber", serialNumber); QMetaType::QString
+//    QString purchaseDate = ui->dateEdit_purchaseDate->text();
+//    QVariant purchaseDateOrNull = purchaseDate.isEmpty() ? QVariant(QVariant::String) : purchaseDate;
+
     for(QSqlQuery * query : *queries)
     {
         query->bindValue(":serialNumber", serialNumberOrNull);
+//        query->bindValue(":purchaseDate", purchaseDateOrNull);
         if(query->exec())
         {
             while(query->next())
@@ -140,7 +156,7 @@ void Widget::addDataToModel(QStandardItemModel * model, QList<QSqlQuery *> * que
                 QList<QStandardItem*> rowList = {
                     new QStandardItem("SiPM"),
                     new QStandardItem(query->value("serial_number").toString()),
-                    new QStandardItem("2021-05-31"),
+                    new QStandardItem(query->value("purchase_date").toString()),
                     new QStandardItem(query->value("model").toString()),
                     new QStandardItem(query->value("status").toString()),
                     new QStandardItem(query->value("institution").toString()),
