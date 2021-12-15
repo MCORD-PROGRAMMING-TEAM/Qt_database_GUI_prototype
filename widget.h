@@ -28,8 +28,6 @@ private:
     Ui::Widget * ui;
     QSqlDatabase * mcordDatabase;
     QList<QSqlQuery *> * preparedQueries;
-//    QSqlQuery * sipmQuery;
-//    QSqlQueryModel *mcordModel;
     QStandardItemModel * mcordModel;
 
     void addDataToModel(QStandardItemModel *model, QList<QSqlQuery *> * queries);
